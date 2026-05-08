@@ -1,7 +1,7 @@
 // Content scraped from kagankans.com
 window.SITE = {
   name: "Daniel Kagan-Kans",
-  bio: "I'm a writer from Maryland living in New York. I work on AI, science, culture, and ideas for publications including The Wall Street Journal and The New York Times. Email for assignments. I was previously managing editor at Mosaic.",
+  bio: "I write about AI, science, and culture for publications including The Wall Street Journal and The New York Times. I'm from Maryland, live in New York, and was previously managing editor at Mosaic.",
   email: "dkagankans@gmail.com",
   twitter: { handle: "@kagankans", url: "https://x.com/kagankans" },
   agent: { name: "Sarah Fuentes, UTA", email: "sarah.fuentes@unitedtalent.com" },

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dan Kagan-Kans</title>
+<meta name="description" content="Dan Kagan-Kans is a writer from Maryland living in New York, working on AI, science, culture, and ideas for The Wall Street Journal, The New York Times, and others.">
+<meta name="author" content="Dan Kagan-Kans">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dan Kagan-Kans · Writer">
+<meta property="og:description" content="A writer from Maryland, living in New York. AI, science, culture, and ideas.">
+<meta property="og:url" content="https://kagankans.com">
+<meta property="og:site_name" content="Dan Kagan-Kans">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@kagankans">
+<meta name="twitter:title" content="Dan Kagan-Kans · Writer">
+<meta name="twitter:description" content="A writer from Maryland, living in New York. AI, science, culture, and ideas.">
+
+<!-- Favicon — italic k in purple, on cream -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%23f4f1ea'/><text x='32' y='48' font-family='Cormorant Garamond, Garamond, Georgia, serif' font-style='italic' font-weight='400' font-size='52' text-anchor='middle' fill='%23734a9c'>k</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #f4f1ea; min-height: 100%; }
+  @media print { html, body { background: #fff !important; } }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+
+<script src="site-data.js"></script>
+<script src="app.js"></script>
+
+<script>
+ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Final, null));
+</script>
+</body>
+</html>

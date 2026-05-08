@@ -21,21 +21,23 @@ const Final = () => {
     }
     .fn-head {
       padding: 96px 96px 48px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 116px;
+      gap: 48px;
+      align-items: start;
     }
+    .fn-head-text { min-width: 0; }
     .fn-name {
       display: flex; align-items: center; gap: 24px;
       font-family: 'Inter', system-ui, sans-serif;
       font-size: clamp(14px, 1.2vw, 18px);
       font-weight: 500; letter-spacing: 0.42em;
       text-transform: uppercase; line-height: 1;
-      margin: 0 0 56px 0;
+      margin: 0 0 32px 0;
       color: var(--p-deep);
     }
     .fn-bio-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 116px;
-      gap: 48px;
-      align-items: center;
+      display: block;
     }
     .fn-portrait {
       width: 116px; height: 116px;
@@ -68,6 +70,7 @@ const Final = () => {
     }
     .fn-contact {
       display: flex; justify-content: space-between; align-items: baseline;
+      font-style: normal;
       gap: 48px; padding-bottom: 28px;
       border-bottom: 1px solid oklch(0.42 0.18 300 / 0.25);
       font-family: 'Inter', system-ui, sans-serif;
@@ -92,9 +95,10 @@ const Final = () => {
       padding-top: 14px; margin-bottom: 24px;
     }
     .fn-h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic; font-weight: 400; font-size: 28px;
-      letter-spacing: -0.01em; margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-style: normal; font-weight: 500; font-size: 13px;
+      letter-spacing: 0.32em; text-transform: uppercase;
+      margin: 0;
       color: var(--p-deep);
     }
 
@@ -113,8 +117,8 @@ const Final = () => {
       color: var(--ink); font-weight: 500;
     }
     .fn-title {
-      font-size: 26px; font-weight: 400;
-      letter-spacing: -0.01em; line-height: 1.15;
+      font-size: 22px; font-weight: 400;
+      letter-spacing: -0.01em; line-height: 1.2;
       transition: color 0.3s;
     }
     .fn-desc {
@@ -146,8 +150,8 @@ const Final = () => {
       color: var(--ink); font-weight: 500;
     }
     .fn-arch-title {
-      font-size: 19px; letter-spacing: -0.005em;
-      transition: color 0.2s; line-height: 1.25;
+      font-size: 17px; letter-spacing: -0.005em;
+      transition: color 0.2s; line-height: 1.3;
     }
     .fn-arch-pub {
       font-family: 'Inter', system-ui, sans-serif;
@@ -160,7 +164,7 @@ const Final = () => {
     .fn-footer-bar {
       position: relative;
       margin-top: 96px;
-      height: 220px;
+      height: 140px;
       background: var(--p-deep);
       overflow: hidden;
     }
@@ -194,38 +198,38 @@ const Final = () => {
 
     /* — Responsive — */
     @media (max-width: 900px) {
-      .fn-head { padding: 64px 32px 32px; }
-      .fn-portrait { width: 64px; height: 64px; box-shadow: 0 0 0 1px var(--cream), 0 0 0 1.5px var(--p); }
-      .fn-bio-row { grid-template-columns: 1fr 64px; gap: 16px; }
-      .fn-name { font-size: 13px; gap: 16px; margin-bottom: 24px; letter-spacing: 0.32em; }
+      .fn-head { padding: 64px 32px 32px; grid-template-columns: minmax(0, 1fr) 96px; gap: 28px; }
+      .fn-portrait { width: 96px; height: 96px; box-shadow: 0 0 0 1px var(--cream), 0 0 0 1.5px var(--p); }
+      .fn-name { font-size: 13px; gap: 16px; margin-bottom: 20px; letter-spacing: 0.32em; }
       .fn-bio-top { font-size: 17px; }
       .fn-body { padding: 0 32px; }
       .fn-contact { gap: 28px; }
       .fn-contact-item { flex: 1 1 auto; min-width: 140px; }
-      .fn-h2 { font-size: 24px; }
+      .fn-h2 { font-size: 12px; }
       .fn-track { grid-template-columns: 24px 1fr; gap: 16px; padding: 16px 0; }
       .fn-track .fn-pub { grid-column: 2; text-align: left; margin-top: 8px; }
-      .fn-title { font-size: 21px; }
+      .fn-title { font-size: 19px; }
       .fn-arch-item { grid-template-columns: 22px 1fr; gap: 14px; }
       .fn-arch-item .fn-arch-pub { grid-column: 2; text-align: left; margin-top: 4px; }
-      .fn-arch-title { font-size: 17px; }
-      .fn-footer-bar { height: 140px; margin-top: 64px; }
+      .fn-arch-title { font-size: 16px; }
+      .fn-footer-bar { height: 110px; margin-top: 64px; }
     }
 
     @media (max-width: 600px) {
-      .fn-head { padding: 56px 24px 24px; }
-      .fn-name { font-size: 12px; gap: 14px; margin-bottom: 24px; letter-spacing: 0.3em; flex-wrap: wrap; }
-      .fn-bio-row { grid-template-columns: 1fr; gap: 20px; }
+      .fn-head { padding: 56px 24px 24px; grid-template-columns: 1fr; gap: 20px; }
+      .fn-head-text { order: 1; }
+      .fn-portrait { order: 2; }
+      .fn-name { font-size: 12px; gap: 14px; margin-bottom: 18px; letter-spacing: 0.3em; flex-wrap: wrap; }
       .fn-bio-top { font-size: 16px; max-width: 100%; }
-      .fn-portrait { width: 80px; height: 80px; }
+      .fn-portrait { width: 96px; height: 96px; }
       .fn-body { padding: 0 24px; }
       .fn-section { margin-top: 40px; }
       .fn-track { grid-template-columns: 28px 1fr; gap: 12px; padding: 14px 0; }
       .fn-track .fn-pub { grid-column: 2; text-align: left; margin-top: 6px; }
       .fn-arch-item { grid-template-columns: 24px 1fr; gap: 12px; }
-      .fn-title { font-size: 19px; }
-      .fn-arch-title { font-size: 16px; }
-      .fn-footer-bar { height: 100px; margin-top: 48px; }
+      .fn-title { font-size: 17px; }
+      .fn-arch-title { font-size: 15px; }
+      .fn-footer-bar { height: 80px; margin-top: 48px; }
     }
 
     /* — Print — */
@@ -254,21 +258,21 @@ const Final = () => {
   return React.createElement("div", { className: "fn-root" },
     React.createElement("style", null, css),
     React.createElement("header", { className: "fn-head" },
-      React.createElement("h1", { className: "fn-name" },
-        React.createElement("span", null, "Dan"),
-        React.createElement("span", null, "Kagan-Kans")
-      ),
-      React.createElement("div", { className: "fn-bio-row" },
+      React.createElement("div", { className: "fn-head-text" },
+        React.createElement("h1", { className: "fn-name" },
+          React.createElement("span", null, "Dan"),
+          React.createElement("span", null, "Kagan-Kans")
+        ),
         React.createElement("p", { className: "fn-bio-top" },
           "I'm a writer from Maryland living in New York. I work on AI, science, culture, and ideas for publications including ",
           React.createElement("em", null, "The Wall Street Journal"), " and ",
           React.createElement("em", null, "The New York Times"),
           ". Email for assignments. I was previously managing editor at ",
           React.createElement("em", null, "Mosaic"), "."
-        ),
-        React.createElement("figure", { className: "fn-portrait" },
-          React.createElement("img", { src: "dkk.jpeg", alt: "Portrait of Dan Kagan-Kans", width: "700", height: "700", loading: "eager", decoding: "async" })
         )
+      ),
+      React.createElement("figure", { className: "fn-portrait" },
+        React.createElement("img", { src: "dkk.jpeg", alt: "Portrait of Dan Kagan-Kans", width: "700", height: "700", loading: "eager", decoding: "async" })
       )
     ),
     React.createElement("main", { className: "fn-body" },

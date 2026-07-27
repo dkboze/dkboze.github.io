@@ -7,6 +7,13 @@ window.SITE = {
   agent: { name: "Sarah Fuentes, UTA", email: "sarah.fuentes@unitedtalent.com" },
   recent: [
     {
+      title: "Hans Moravec Was Right About AI. What About the Fate of Mankind?",
+      pub: "New York",
+      year: "2026",
+      desc: "Hans Moravec predicted human-level AI by 2028. Now he contemplates our species’ end—and his own.",
+      url: "https://nymag.com/intelligencer/article/hans-moravec-interview.html",
+    },
+    {
       title: "How 6,000 Bad Coding Lessons Turned a Chatbot Evil",
       pub: "The New York Times",
       year: "2026",

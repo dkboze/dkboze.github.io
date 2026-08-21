@@ -7,6 +7,13 @@ window.SITE = {
   agent: { name: "Sarah Fuentes, UTA", email: "sarah.fuentes@unitedtalent.com" },
   recent: [
     {
+      title: "The Data Center Is a Symbol",
+      pub: "Transformer",
+      year: "2026",
+      desc: "The claims about water and energy are mostly wrong. The feeling underneath them is not.",
+      url: "https://www.transformernews.ai/p/the-data-center-is-a-symbol",
+    },
+    {
       title: "Hans Moravec Was Right About AI. What About the Fate of Mankind?",
       pub: "New York",
       year: "2026",

@@ -304,7 +304,7 @@ const Final = () => {
       ),
       React.createElement("section", { className: "fn-section", "aria-labelledby": "sec-recent" },
         React.createElement("div", { className: "fn-section-head" },
-          React.createElement("h2", { className: "fn-h2", id: "sec-recent" }, "Recent")
+          React.createElement("h2", { className: "fn-h2", id: "sec-recent" }, "Freelance")
         ),
         S.recent.map((p, i) => React.createElement("a", { className: "fn-track", key: i, href: p.url },
           React.createElement("div", { className: "fn-num", "aria-hidden": "true" }, String(i + 1).padStart(2, '0')),
@@ -331,7 +331,7 @@ const Final = () => {
       ),
       React.createElement("section", { className: "fn-section", "aria-labelledby": "sec-archive" },
         React.createElement("div", { className: "fn-section-head" },
-          React.createElement("h2", { className: "fn-h2", id: "sec-archive" }, "Archive")
+          React.createElement("h2", { className: "fn-h2", id: "sec-archive" }, "Older")
         ),
         React.createElement("div", { className: "fn-archive" },
           S.archive.map((p, i) => React.createElement("a", { className: "fn-arch-item", key: i, href: p.url },

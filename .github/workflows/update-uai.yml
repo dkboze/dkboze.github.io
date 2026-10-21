@@ -1,0 +1,23 @@
+name: Update Understanding AI posts
+
+on:
+  schedule:
+    - cron: "17 12 * * *"  # daily, around 8am New York time
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/update_uai.py
+      - name: Commit if anything changed
+        run: |
+          if git diff --quiet; then echo "No new posts"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Add new Understanding AI post"
+          git push

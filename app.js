@@ -2,6 +2,7 @@
 // no top gradient (D: ink), purple bar at the bottom (C), slight purple edge on the portrait (E).
 const Final = () => {
   const S = window.SITE;
+  const UAI = window.UAI_POSTS || [];
 
   const css = `
     :root {
@@ -132,6 +133,15 @@ const Final = () => {
       font-size: 11px; letter-spacing: 0.18em;
       text-transform: uppercase; color: var(--ink); text-align: right;
     }
+
+    .fn-more {
+      display: inline-block; margin-top: 16px;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--ink); text-decoration: none;
+      border-bottom: 1px solid oklch(0.45 0.20 300 / 0.5); padding-bottom: 1px;
+    }
+    .fn-more:hover { color: var(--p); border-bottom-color: var(--p); }
 
     .fn-archive { margin-top: 8px; }
     .fn-arch-item {
@@ -267,6 +277,8 @@ const Final = () => {
           "I'm a writer from Maryland living in New York. I work on AI, science, culture, and ideas for publications including ",
           React.createElement("em", null, "The Wall Street Journal"), " and ",
           React.createElement("em", null, "The New York Times"),
+          ". This year I'm a senior fellow at ",
+          React.createElement("em", null, "Understanding AI"),
           ". Email for assignments. I was previously managing editor at ",
           React.createElement("em", null, "Mosaic"), "."
         )
@@ -302,6 +314,20 @@ const Final = () => {
           ),
           React.createElement("div", { className: "fn-pub" }, p.pub)
         ))
+      ),
+      UAI.length > 0 && React.createElement("section", { className: "fn-section", "aria-labelledby": "sec-uai" },
+        React.createElement("div", { className: "fn-section-head" },
+          React.createElement("h2", { className: "fn-h2", id: "sec-uai" }, "At Understanding AI")
+        ),
+        UAI.slice(0, 4).map((p, i) => React.createElement("a", { className: "fn-track", key: i, href: p.url },
+          React.createElement("div", { className: "fn-num", "aria-hidden": "true" }, String(i + 1).padStart(2, '0')),
+          React.createElement("div", null,
+            React.createElement("div", { className: "fn-title" }, p.title),
+            React.createElement("div", { className: "fn-desc" }, p.desc)
+          ),
+          React.createElement("div", { className: "fn-pub" }, new Date(p.date + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }))
+        )),
+        React.createElement("a", { className: "fn-more", href: "https://substack.com/@kagankans" }, "All posts →")
       ),
       React.createElement("section", { className: "fn-section", "aria-labelledby": "sec-archive" },
         React.createElement("div", { className: "fn-section-head" },

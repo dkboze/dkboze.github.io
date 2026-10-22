@@ -2,7 +2,7 @@
 // no top gradient (D: ink), purple bar at the bottom (C), slight purple edge on the portrait (E).
 const Final = () => {
   const S = window.SITE;
-  const UAI = window.UAI_POSTS || [];
+  const UAI = (window.UAI_POSTS || []).filter(p => !p.hidden);
 
   const css = `
     :root {

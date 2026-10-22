@@ -2,7 +2,11 @@
 
 The feed only holds the newest 20 posts across all writers, so posts are
 accumulated here and never dropped. Existing entries are left untouched, so a
-hand-edited title or description survives later runs.
+hand-edited title or description survives later runs. To keep a post off the
+page for good, set "hidden": true on its entry rather than deleting it, since a
+deleted entry would be re-added on the next run while it is still in the feed.
+
+Only regular articles are taken: podcast episodes and videos are skipped.
 """
 import html
 import json
@@ -55,6 +59,10 @@ def main():
         if item.findtext("dc:creator", namespaces=ns) != AUTHOR:
             continue
         url = item.findtext("link").split("?")[0]
+        if "/p/" not in url:
+            continue
+        if any(e.get("type", "").startswith(("audio/", "video/")) for e in item.findall("enclosure")):
+            continue
         if url in known:
             continue
         posts.append({
